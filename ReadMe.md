@@ -48,3 +48,8 @@ cat urls.txt | grep -Eo "((http[s]?:\/\/).*\/)" | urldedupe | anew -q paths.txt;
 
 ```
 
+## Search in Path from struts files
+
+```
+cat paths.txt | httpx -mc 200 --path "/struts/utils.js" -ct | grep text/javascript
+```
