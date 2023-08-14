@@ -48,7 +48,7 @@ cat urls.txt | grep -Eo "((http[s]?:\/\/).*\/)" | urldedupe | anew -q paths.txt;
 
 ```
 
-## Search in Path from struts files
+## Search in Path from files
 
 ```
 cat paths.txt | httpx -mc 200 --path "/struts/utils.js" -ct | grep text/javascript
@@ -56,4 +56,9 @@ cat paths.txt | httpx -mc 200 --path "/struts/utils.js" -ct | grep text/javascri
 
 ```
 cat paths.txt | httpx -mc 200 --path "/struts/webconsole.js" -ct | grep text/javascript
+```
+
+```
+cat paths.txt | httpx -mc 200 --path "/app_dev.php/_profiler/open?file=app/config/parameters.ym
+l" -ms database_user
 ```
