@@ -37,3 +37,14 @@ cat $output-subjs-file | while read -r url; do jsluice urls -R "$url" <(curl -sk
 ```
 ls jsluice/ | while read -r file; do cat jsluice/$file | jq -r '.url' | anew -q jq/jq.$(echo $file | sed "s/luice.//g"); done
 ```
+
+
+## Extract Path from urls
+
+
+*
+```
+cat urls.txt | grep -Eo "((http[s]?:\/\/).*\/)" | urldedupe | anew -q paths.txt; cat urls.txt | grep -Eo "((http[s]?:\/\/).[^/]+.)" | urldedupe | anew -q paths.txt; cat urls.txt | grep -Eo "((http[s]?:\/\/).[^/]+.[^/]+)" | urldedupe | anew -q paths.txt; cat urls.txt | grep -Eo "((http[s]?:\/\/).[^/]+.[^/]+.[^/]+)" | urldedupe | anew -q paths.txt
+
+```
+
