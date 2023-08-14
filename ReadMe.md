@@ -59,6 +59,5 @@ cat paths.txt | httpx -mc 200 --path "/struts/webconsole.js" -ct | grep text/jav
 ```
 
 ```
-cat paths.txt | httpx -mc 200 --path "/app_dev.php/_profiler/open?file=app/config/parameters.ym
-l" -ms database_user
+cat paths.txt | httpx -mc 200 --path "/app_dev.php/_profiler/open?file=app/config/parameters.yml" -ms database_user
 ```
