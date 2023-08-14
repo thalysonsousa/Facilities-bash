@@ -53,3 +53,7 @@ cat urls.txt | grep -Eo "((http[s]?:\/\/).*\/)" | urldedupe | anew -q paths.txt;
 ```
 cat paths.txt | httpx -mc 200 --path "/struts/utils.js" -ct | grep text/javascript
 ```
+
+```
+cat paths.txt | httpx -mc 200 --path "/struts/webconsole.js" -ct | grep text/javascript
+```
